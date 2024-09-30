@@ -1,0 +1,20 @@
+.odd-css {
+    background-color: lightpink;
+    font-family: "Verdana", "DejaVu Sans", sans-serif;
+}
+
+#blue-text {
+    color: blue;
+    font-size: 36px;
+}
+
+.odd-css#big-font {
+    font-size: 24px;
+}
+
+#green-css {
+    background-color: lightgreen;
+    font-size: 24px;
+    font-weight: bold;
+}
+
