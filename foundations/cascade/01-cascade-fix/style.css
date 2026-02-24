@@ -8,16 +8,26 @@ body {
   font-weight: 800;
 }
 
+/* Original position
 .small-para {
   font-size: 14px;
   font-weight: 800;
 }
+*/
 
 .para {
   font-size: 22px;
 }
 
-.confirm {
+/* Moved position to take advantage of rule order
+since it is defined and inheritance/specificity are even*/
+.small-para {
+  font-size: 14px;
+  font-weight: 800;
+}
+
+/* ID has higher specificity */
+#confirm-button {
   background: green;
   color: white;
   font-weight: bold;
@@ -29,14 +39,29 @@ body {
   font-size: 20px;
 }
 
-.child {
+/* My solution was specifying the class text child
+to be specified first, since class selectors will beat 
+div.child, however, the solution below can copy div.text
+and have div.child to create a descendant selector and
+be placed below since both have specificity and must be below
+for ruler order
+.text .child {
   color: rgb(0, 0, 0);
   font-weight: 800;
   font-size: 14px;
 }
+*/
+
 
 div.text {
   color: rgb(0, 0, 0);
   font-size: 22px;
   font-weight: 100;
+}
+
+/* Placed after div.text for rule order and specificity */
+div.child {
+  color: rgb(0, 0, 0);
+  font-weight: 800;
+  font-size: 14px;
 }
